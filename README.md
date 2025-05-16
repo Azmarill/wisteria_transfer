@@ -36,7 +36,7 @@
 
 ### 1. WSLの導入
 
-WindowsにWSLを導入します。
+Windows/MacにWSLを導入します。
 
 * [WSLインストールガイド（公式）](https://learn.microsoft.com/ja-jp/windows/wsl/install)
 
