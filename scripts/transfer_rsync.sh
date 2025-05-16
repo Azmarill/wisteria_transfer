@@ -2,17 +2,17 @@
 
 LOCAL_DIR_1="/mnt/c/wisteria_data/push/"
 LOCAL_DIR_2="/mnt/c/wisteria_data/pull/"
-mkdir -p $LOCAL_DIR_1
-mkdir -p $LOCAL_DIR_2
+mkdir -p "$LOCAL_DIR_1"
+mkdir -p "$LOCAL_DIR_2"
 
-if [ -z "$1"] || [ -z "$2"]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
    echo "スクリプトの後にユーザー名とモードを入力してください: $0 <ユーザー名> [push|pull]"
    exit 1
 fi
 
 REMOTE_USER="$1"
-REMOTE_HOST="wisteria.t.u-tokyo.ac.jp"
-REMOTE_DIR="/home/${REMOTTE_USER}/data/"
+REMOTE_HOST="wisteria.cc.u-tokyo.ac.jp"
+REMOTE_DIR="/home/${REMOTE_USER}/data/"
 MODE="$2"
 
 if [ "$MODE" = "push" ]; then
@@ -24,6 +24,6 @@ elif [ "$MODE" = "pull" ]; then
    rsync -avzh --progress "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}" "$LOCAL_DIR_2"
 
 else
-   echo"モードが設定されていません。pushもしくはpullを指定してください。"
+   echo "モードが設定されていません。pushもしくはpullを指定してください。"
    exit 1
 fi
