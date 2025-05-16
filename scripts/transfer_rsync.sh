@@ -5,7 +5,7 @@ LOCAL_DIR_2="/mnt/c/wisteria_data/pull/"
 mkdir -p $LOCAL_DIR_1
 mkdir -p $LOCAL_DIR_2
 
-if [-z "$1"] || [-z "$2"]; then
+if [ -z "$1"] || [ -z "$2"]; then
    echo "スクリプトの後にユーザー名とモードを入力してください: $0 <ユーザー名> [push|pull]"
    exit 1
 fi
