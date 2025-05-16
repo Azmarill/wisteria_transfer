@@ -1,18 +1,18 @@
 # wisteria\_transfer
 
-このリポジトリは、東京大学のスパコン **Wisteria** とローカルのWindows PC（WSL環境）間で、ファイルを効率よく双方向（push/pull）に転送するためのスクリプトを提供します。
+このリポジトリは、東京大学のスパコン **wisteria** とローカルのWindows/Mac PC（WSL環境）間で、ファイルを効率よく双方向（push/pull）に転送するためのスクリプトを提供します。
 
 ## 利用方法
 
 スクリプトを使用するには、以下のコマンドをWSL上で実行します。
 
-### データをローカルからWisteriaへ送信（push）する場合
+### データをローカルからwisteriaへ送信（push）する場合
 
 ```bash
 ./scripts/transfer_rsync.sh <ユーザー名> push
 ```
 
-### データをWisteriaからローカルへ取得（pull）する場合
+### データをwisteriaからローカルへ取得（pull）する場合
 
 ```bash
 ./scripts/transfer_rsync.sh <ユーザー名> pull
@@ -23,10 +23,10 @@
 ユーザー名が`n46001`の場合：
 
 ```bash
-# データをWisteriaへ送信する場合
+# データをwisteriaへ送信する場合
 ./scripts/transfer_rsync.sh n46001 push
 
-# データをWisteriaから受信する場合
+# データをwisteriaから受信する場合
 ./scripts/transfer_rsync.sh n46001 pull
 ```
 
@@ -54,7 +54,7 @@ GitHubに公開鍵の登録を行ってください。
 
 以下のディレクトリを作成しておきます。
 
-* Windowsの場所:
+* Windows/Macの場所:
 
   ```
   C:\wisteria_data\push
