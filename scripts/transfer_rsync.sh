@@ -15,11 +15,11 @@ REMOTE_HOST="wisteria.t.u-tokyo.ac.jp"
 REMOTE_DIR="/home/${REMOTTE_USER}/data/"
 MODE="$2"
 
-if ["$MODE"="push"]; then
+if [ "$MODE" = "push" ]; then
    echo "ユーザ ${REMOTE_USER}として${REMOTE_HOST}にデータを転送します~"
    rsync -avzh --progress "$LOCAL_DIR_1" "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}"
 
-elif ["$MODE"="pull"]; then
+elif [ "$MODE" = "pull" ]; then
    echo "ユーザ ${REMOTE_USER}として${REMOTE_HOST}からデータを取得します~"
    rsync -avzh --progress "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}" "$LOCAL_DIR_2"
 
