@@ -3,10 +3,14 @@
 LOCAL_DIR="/mnt/c/wisteria_data/"
 mkdir -p $LOCAL_DIR
 
-# Wisteriaの接続情報（ユーザー名、ホスト名、ディレクトリを適宜修正）
-REMOTE_USER="n46001"
-REMOTE_HOST="wisteria.t.u-tokyo.ac.jp"
-REMOTE_DIR="/home/n46001/data/"
+if [-z "$1"]; then
+   echo "スクリプトの後にユーザー名を入力してください: $0 <ユーザー名>"
+   exit 1
+fi
 
-# rsyncコマンド実行（差分を効率的に転送）
+REMOTE_USER="$1"
+REMOTE_HOST="wisteria.t.u-tokyo.ac.jp"
+REMOTE_DIR="/home/${REMOTTE_USER}/data/"
+
+echo "ユーザ ${REMOTE_USER}として${REMOTE_HOST}にデータを転送します~"
 rsync -avzh --progress "$LOCAL_DIR" "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}"
